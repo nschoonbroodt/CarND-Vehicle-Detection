@@ -1,4 +1,4 @@
-"""Create and save the classier to identify vehicles from non vehicles"""
+"""Create and save the classier to identify vehicles from non vehicles."""
 
 from feature_extraction import generate_features_from_dataset
 
@@ -16,7 +16,7 @@ import pickle
 shape = (64,64,3)
 
 def read_images(vehicle_folder, non_vehicle_folder, valid=.1, test=.1):
-    """Read the images manage data formating
+    """Read the images manage data formating.
     
     Args:
         vehicle_folder: str
@@ -65,7 +65,7 @@ def read_images(vehicle_folder, non_vehicle_folder, valid=.1, test=.1):
     return X_train, y_train, X_valid, y_valid, X_test, y_test
 
 def split_folder(dirname, valid=.1, test=.1):
-    """Split images into train, valid and test sets for one directory
+    """Split images into train, valid and test sets for one directory.
     
     Images must be in png format.
     
@@ -77,7 +77,8 @@ def split_folder(dirname, valid=.1, test=.1):
     Returns: X_train, X_valid, X_test:
         (J,K,L,C) np.array, K,L,C are the picture dimension and channel
         
-    TODO: Handle other format with an optional arg"""
+    TODO: Handle other format with an optional arg
+    """
     images = glob.glob(dirname + '/*.png')
     nb = len(images)
     idx_test = int(nb*(1-test))

@@ -14,7 +14,7 @@ from skimage.feature import hog
 import matplotlib.pyplot as plt
 
 def generate_features_sliding(img, features_definition, windows_definitions):
-    """Generate features from sliding windows over an image
+    """Generate features from sliding windows over an image.
 
     Args:
         img (np.array, (X,Y,3)): The picture, RGB values (0 to 255)
@@ -171,7 +171,6 @@ def generate_features_from_dataset(dataset, features_definition):
         >>> features = generate_features_from_dataset(dataset, features_definition)
 
     """
-    
     # get the size to initialise a numpy array
     f = generate_features(dataset[0,:,:,:], features_definition)
     
@@ -278,7 +277,7 @@ def bin_spatial(img, size=(16, 16)):
     return cv2.resize(img, size).ravel()
 
 def color_hist(img, nbins=32, bins_range=(0, 256)):
-    """Compute a color histogram of the picture
+    """Compute a color histogram of the picture.
     
     Args:
         img (np.array, MxNxC): original image
@@ -297,7 +296,7 @@ def color_hist(img, nbins=32, bins_range=(0, 256)):
     return np.concatenate(feat).ravel()
 
 def set_range(window_definition, shape):
-    """Helper function restricting the range to image shape, handling None"""
+    """Helper function restricting the range to image shape, handling None."""
     win_size = window_definition["size"]
     
     x_range = list(window_definition["x_range"])
